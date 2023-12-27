@@ -1,0 +1,25 @@
+I always had an interest in game design, even when I was little kid. I grew up with a pair of parents who were into gaming as well, so I've been seeing someone play, or playing games myself since forever. 
+
+When I was about seven or eight, I started to think about how interesting it would be to make a survival game with RPG elements, and started very passionately drawing all my ideas. I always wanted a large overarching narrative, and it was really so fun to think about.
+
+Eventually when I was 11 I discovered RPG Maker VX Ace Lite, and started actual game development for the first time. Since this was the demo version of RPG Maker VX Ace, it was pretty limited, so I ended up begging my dad to get me RPG Maker MV when it was on sale around the time I turned 12. At first he told me to just use Unity, but I didn't want to use a "real" game engine.
+
+That changed, though! Some cute looking Unity tutorials, and devlogs popped up in my YouTube recommended feed, and I was entranced. I learned Unity almost right away, and loved spending hours just messing around in it. 
+
+I didn't know how to code yet, so I used my pocket money to buy a third-person controller asset, and used that alongside with VRoid to start developing a game. After some more devlogs, tutorials, and procrastination, I learned how to code with the help of Brackeys' tutorials.
+
+As for SpamtOS (formerly SpamtonOS,) that started as a joke in a call with my friend, Kate. I talked about how funny it would be to make an OS with the aesthetics of Spamton and the Sweepstakes that were going on at the time. That subsequently led to me using "archiso" to make a custom version of Arch with the name SpamtOS, and a little Spamton image on boot. All-in-all the first release took 15 minutes, with me maybe only having spent an hour or two of additional time on the build system
+
+It wasn't a project I put much thought into, or a serious idea, so I didn't care about the medium. If it were a large project, I would've much rather spent my time doing game development, but it really was just a goof.
+
+I'm not familiar with QB64 but this would be fairly straightforward. You can use archiso to build your own Arch Linux ISO. It lets you choose which packages pacman should install into the ISO, and everything else can be done by copying files into the airootfs folder. That folder is  what Arch will base the root of the ISO on, making it very easy to add files to it. The beauty of this is that you can let archiso do all the work booting the Linux kernel, and packaging everything into an ISO; something that would be a lot more difficult when making your own Linux distribution from scratch.
+
+SCons allows me to write a build system in Python, which is very useful for the countless tasks that archiso can't do. For instance, it can compile and/or install programs that aren't available in the Arch Linux repositories, without having to create a pacman repository, or rely upon the AUR. Using either would add a lot of unnecessary work, and could make things very messy in the future.
+
+Something else SCons is good for is abstracting build commands just like Makefile. After creating the airootfs, SCons builds using archiso, saving a few steps.
+
+The dependencies are very straightforward, you can download them with the following command:
+pacman -S python python-colorama python-pip scons cmake archiso 
+rustc base-devel
+
+That's all for today's RSS! Follow her, https://ko-fi.com/molasses and https://www.patreon.com/molasseslover
